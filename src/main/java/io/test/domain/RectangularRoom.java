@@ -11,7 +11,7 @@ public class RectangularRoom implements Room {
     private final BigDecimal width;
     private final BigDecimal height;
 
-    public RectangularRoom(BigDecimal length, BigDecimal width, BigDecimal height) {
+    RectangularRoom(BigDecimal length, BigDecimal width, BigDecimal height) {
         this.length = length;
         this.width = width;
         this.height = height;

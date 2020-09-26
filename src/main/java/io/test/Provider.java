@@ -16,8 +16,12 @@ public class Provider {
     private static final Logger LOGGER = Logger.getLogger(Provider.class.getName());
 
     public static void main(String[] args) {
+        if (args.length < 1) {
+            throw new IllegalArgumentException("Path to file has to be passed as an argument");
+        }
+
         try {
-            Files.lines(Paths.get("src\\main\\resources\\input1.txt"))
+            Files.lines(Paths.get(args[0]))
                 .filter(s -> !s.isEmpty())
                 .map(l -> l.split(" "))
                 .flatMap(Arrays::stream)
